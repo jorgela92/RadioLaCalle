@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AngularFireModule } from '@angular/fire'; // Firebase config
-import { AngularFirestoreModule } from '@angular/fire/firestore'; // For Cloud Firestore
-import { environment } from 'src/environments/environment'; // Config
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../../../environments/environment';
+import { FormsModule } from '@angular/forms';
+import {AppModule} from './app.module'; // For Cloud Firestore
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), // Import firebase
     AngularFirestoreModule // Import firestore
   ],
-  providers: []
+  providers: [],
+  bootstrap: [ AppComponent ]
 })
 
 @Component({
@@ -23,6 +24,7 @@ import { environment } from 'src/environments/environment'; // Config
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'Radio La Calle';
 }

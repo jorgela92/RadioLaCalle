@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {Program} from '../app/app.component';
+import {RadioProgram} from '../app/app.component';
 
-// @ts-ignore
-import admin from 'firebase';
+
+@Component({
+  selector: 'app-listprogram',
+  templateUrl: './listprogram.component.html',
+  styleUrls: ['./listprogram.component.css']
+})
 
 export class ListprogramComponent implements OnInit {
-  listItems: Program[] = [];
+  programObject: RadioProgram = new RadioProgram();
+  listItems: RadioProgram[] = [];
   constructor() {
   }
 
   ngOnInit() {
-    admin.initializeApp({
-      credential: admin.credential.applicationDefault()
-    });
-    const db = admin.firestore();
-    db.collection('programs').get()
-      .then((snapshot) => {
-        snapshot.forEach((doc) => {
-          console.log(doc.id, '=>', doc.data());
-        });
-      })
-      .catch((err) => {
-        console.log('Error getting documents', err);
-      });
+    this.programObject.titleProgram = 'titulo';
+    this.programObject.subtitleProgram = 'subtitulo';
+    this.programObject.imageProgram = 'image';
+    for (let i = 0; i < 10; i++) {
+      this.listItems.push(this.programObject);
+    }
   }
 }

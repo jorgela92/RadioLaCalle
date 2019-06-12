@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Program} from '../app/app.component';
+import {RadioProgram} from '../app/app.component';
+
 
 @Component({
   selector: 'app-cellprogram',
@@ -7,7 +8,7 @@ import {Program} from '../app/app.component';
   styleUrls: ['./cellprogram.component.css']
 })
 export class CellprogramComponent implements OnInit {
-  @Input() itemProgram: Program
+  @Input() itemProgram: RadioProgram;
   constructor() { }
 
   ngOnInit() {

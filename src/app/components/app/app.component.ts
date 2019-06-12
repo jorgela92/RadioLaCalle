@@ -11,7 +11,15 @@ export class AppComponent {
 }
 
 export class RadioProgram {
+  id = '';
   titleProgram = '';
   subtitleProgram = '';
   imageProgram = '';
+  programs = [];
+}
+
+export class RadioProgramA {
+  detail = '';
+  image = '';
+  name = '';
 }

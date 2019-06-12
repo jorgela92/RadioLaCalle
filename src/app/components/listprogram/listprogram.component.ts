@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RadioProgram} from '../app/app.component';
-
+import {RadioProgram, RadioProgramA} from '../app/app.component';
+import {DatabaseService} from '../../services/database.service';
 
 @Component({
   selector: 'app-listprogram',
@@ -9,17 +9,25 @@ import {RadioProgram} from '../app/app.component';
 })
 
 export class ListprogramComponent implements OnInit {
-  programObject: RadioProgram = new RadioProgram();
   listItems: RadioProgram[] = [];
-  constructor() {
+  constructor(public dataService: DatabaseService) {
+    this.dataService.getPrograms().subscribe((result) => {
+      for (const doc of result.docs) {
+        this.dataService.getProgram(doc.id).subscribe((resultP) => {
+          const programObject: RadioProgram = new RadioProgram();
+          console.log(doc.data.name);
+          programObject.titleProgram = resultP.get('name') as string;
+          programObject.subtitleProgram = resultP.get('detail') as string;
+          programObject.imageProgram = resultP.get('image') as string;
+          for (const pro of resultP.get('programs')) {
+            programObject.programs.push(pro.valueOf() as RadioProgramA);
+          }
+          this.listItems.push(programObject);
+          });
+      }
+    });
   }
 
   ngOnInit() {
-    this.programObject.titleProgram = 'titulo';
-    this.programObject.subtitleProgram = 'subtitulo';
-    this.programObject.imageProgram = 'image';
-    for (let i = 0; i < 10; i++) {
-      this.listItems.push(this.programObject);
-    }
   }
 }

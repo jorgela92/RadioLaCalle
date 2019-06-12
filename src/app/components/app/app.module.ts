@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../../../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {DatabaseService} from '../../services/database.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ DatabaseService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

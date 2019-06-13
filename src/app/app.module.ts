@@ -12,6 +12,8 @@ import { ListepisodesComponent } from './components/listepisodes/listepisodes.co
 import { CellepisodesComponent } from './components/cellepisodes/cellepisodes.component';
 import {APP_ROUTING} from './app.routes';
 import { HomeComponent } from './components/home/home.component';
+import {RouterModule} from '@angular/router';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { HomeComponent } from './components/home/home.component';
     CellprogramComponent,
     ListepisodesComponent,
     CellepisodesComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    RouterModule,
     APP_ROUTING
   ],
   providers: [ DatabaseService ],

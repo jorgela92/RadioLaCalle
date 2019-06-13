@@ -18,7 +18,7 @@ export class RadioProgram {
   programs = [];
 }
 
-export class RadioProgramA {
+export class RadioEpisodes {
   detail = '';
   image = '';
   name = '';

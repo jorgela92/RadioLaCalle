@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RadioProgram, RadioProgramA} from '../app/app.component';
+import {RadioProgram, RadioEpisodes} from '../../app.component';
 import {DatabaseService} from '../../services/database.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class ListprogramComponent implements OnInit {
           programObject.subtitleProgram = resultP.get('detail') as string;
           programObject.imageProgram = resultP.get('image') as string;
           for (const pro of resultP.get('programs')) {
-            programObject.programs.push(pro.valueOf() as RadioProgramA);
+            programObject.programs.push(pro.valueOf() as RadioEpisodes);
           }
           this.listItems.push(programObject);
           });

@@ -1,9 +1,9 @@
 <div style="text-align:center">
-  <a href="#" class="btn btn-primary" [routerLink]="['home']">Volver</a>
+  <a href="#" class="btn btn-primary" [routerLink]="['home']">Programas</a>
 </div>
 <div class="container">
   <ul class="list-group">
-    <li class="list-group-flush" *ngFor="let program of listItems">
+    <li class="list-group-flush" *ngFor="let program of itemProgram.programs">
       <app-cellprogram [itemProgram]=program></app-cellprogram>
     </li>
   </ul>

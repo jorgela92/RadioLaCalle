@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RadioProgram} from '../../app.component';
+import {RadioEpisodes} from '../../app.component';
 
 @Component({
   selector: 'app-cellepisodes',
@@ -7,7 +7,7 @@ import {RadioProgram} from '../../app.component';
   styleUrls: ['./cellepisodes.component.css']
 })
 export class CellepisodesComponent implements OnInit {
-  @Input() itemProgram: RadioProgram;
+  @Input() itemProgram: RadioEpisodes;
   constructor() { }
 
   ngOnInit() {

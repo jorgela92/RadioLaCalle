@@ -1,7 +1,11 @@
+<a class="btn btn-primary" (click)="clickBack()">Volver</a>
 <div class="container">
+  <h4>{{itemProgram.titleProgram}}</h4>
+  <p>{{itemProgram.subtitleProgram}}</p>
+  <img class="card-img-top" src={{itemProgram.imageProgram}}>
   <ul class="list-group">
-    <li class="list-group-flush" *ngFor="let program of itemProgram.programs">
-      <app-cellprogram [itemProgram]=program></app-cellprogram>
+    <li class="list-group-flush" *ngFor="let episode of itemProgram.programs">
+      <app-cellprogram [itemProgram]=episode></app-cellprogram>
     </li>
   </ul>
 </div>

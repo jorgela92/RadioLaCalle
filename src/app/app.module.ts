@@ -13,7 +13,6 @@ import { CellepisodesComponent } from './components/cellepisodes/cellepisodes.co
 import {APP_ROUTING} from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
-import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { NavComponent } from './components/nav/nav.component';
     CellprogramComponent,
     ListepisodesComponent,
     CellepisodesComponent,
-    HomeComponent,
-    NavComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

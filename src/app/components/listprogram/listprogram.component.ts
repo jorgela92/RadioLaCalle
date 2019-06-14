@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RadioProgram, RadioEpisodes} from '../../app.component';
 import {DatabaseService} from '../../services/database.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-listprogram',
@@ -10,18 +11,15 @@ import {DatabaseService} from '../../services/database.service';
 
 export class ListprogramComponent implements OnInit {
   listItems: RadioProgram[] = [];
-  constructor(public dataService: DatabaseService) {
+  constructor(public dataService: DatabaseService, private router: Router) {
     this.dataService.getPrograms().subscribe((result) => {
       for (const doc of result.docs) {
         this.dataService.getProgram(doc.id).subscribe((resultP) => {
           const programObject: RadioProgram = new RadioProgram();
-          console.log(doc.data.name);
+          programObject.id = doc.id;
           programObject.titleProgram = resultP.get('name') as string;
           programObject.subtitleProgram = resultP.get('detail') as string;
           programObject.imageProgram = resultP.get('image') as string;
-          for (const pro of resultP.get('programs')) {
-            programObject.programs.push(pro.valueOf() as RadioEpisodes);
-          }
           this.listItems.push(programObject);
           });
       }
@@ -29,5 +27,9 @@ export class ListprogramComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  clickBack(): void {
+    this.router.navigate(['home']);
   }
 }

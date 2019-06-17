@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ListprogramComponent } from './components/listprogram/listprogram.component';
@@ -14,6 +15,7 @@ import {APP_ROUTING} from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,

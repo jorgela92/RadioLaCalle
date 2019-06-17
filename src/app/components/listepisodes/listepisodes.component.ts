@@ -8,6 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './listepisodes.component.html',
   styleUrls: ['./listepisodes.component.css'],
 })
+
 export class ListepisodesComponent implements OnInit, OnDestroy {
   private itemProgram: RadioProgram;
   private sub: any;
@@ -15,7 +16,7 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.queryParams.subscribe(params => {
-      this.dataService.getProgram(params['id']).subscribe((resultP) => {
+      this.dataService.getProgram(params.id).subscribe((resultP) => {
         const programObject: RadioProgram = new RadioProgram();
         programObject.id = this.route.snapshot.params.id;
         programObject.titleProgram = resultP.get('name') as string;
@@ -24,6 +25,9 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
         for (const pro of resultP.get('programs')) {
           programObject.programs.push(pro.valueOf() as RadioEpisodes);
         }
+        programObject.programs.sort( function compare(val1, val2) {
+          return val2.date.toDate().getTime() - val1.date.toDate().getTime();
+        });
         this.itemProgram = programObject;
       });
     });

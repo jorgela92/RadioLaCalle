@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {RadioEpisodes} from '../../app.component';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-cellepisodes',
@@ -8,9 +9,12 @@ import {RadioEpisodes} from '../../app.component';
 })
 export class CellepisodesComponent implements OnInit {
   @Input() itemProgram: RadioEpisodes;
-  constructor() { }
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  getFormat(): string {
+    return formatDate(this.itemProgram.date.toDate(), 'dd MMMM yyyy HH:mm', 'en');
   }
-
 }

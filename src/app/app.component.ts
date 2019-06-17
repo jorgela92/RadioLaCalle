@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
+import Timestamp = firebase.firestore.Timestamp;
 
 @Component({
   selector: 'app-root',
@@ -22,4 +24,5 @@ export class RadioEpisodes {
   detail = '';
   image = '';
   name = '';
+  date: Timestamp;
 }

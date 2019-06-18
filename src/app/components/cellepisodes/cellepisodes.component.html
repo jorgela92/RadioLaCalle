@@ -1,8 +1,11 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src={{itemProgram.image}}>
+<div class="card" style="width: 50%;">
+  <img class="card-img-top img-responsive rounded" style="padding: auto" src={{itemProgram.image}} alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{itemProgram.name}}</h5>
-    <p>{{getFormat()}}</p>
-    <p class="card-text">{{itemProgram.detail}}</p>
+    <h5 class="card-title text-center">{{itemProgram.name}}</h5>
+    <p class="card-text text-center"><small class="text-muted">{{getFormat()}}</small></p>
+    <p class="card-text text-center">{{itemProgram.detail}}</p>
+  </div>
+  <div class="card-footer">
+    <!-- REPRODUCTOR -->
   </div>
 </div>

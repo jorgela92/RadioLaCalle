@@ -1,8 +1,8 @@
-<div class="card" style="width: 18rem;" (click)="onclick()">
+<div class="card" (click)="onclick()">
   <div *ngIf="loading" class="loader" alt="loading"></div>
-  <img [hidden]="loading" (load)="onLoad()" class="card-img-top" src={{itemProgram.imageProgram}} alt="image">
+  <img [hidden]="loading" (load)="onLoad()" class="card-img-top img-responsive rounded" style="padding: auto" src={{itemProgram.imageProgram}} alt="image">
   <div class="card-body">
-    <h5 class="card-title">{{itemProgram.titleProgram}}</h5>
-    <p class="card-text">{{itemProgram.subtitleProgram}}</p>
+    <h5 class="card-title text-center">{{itemProgram.titleProgram}}</h5>
+    <p class="card-text text-center">{{itemProgram.subtitleProgram}}</p>
   </div>
 </div>

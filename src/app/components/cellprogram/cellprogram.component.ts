@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {RadioProgram} from '../../app.component';
 import {Router} from '@angular/router';
 
-
 @Component({
   selector: 'app-cellprogram',
   templateUrl: './cellprogram.component.html',
@@ -10,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class CellprogramComponent implements OnInit {
   @Input() itemProgram: RadioProgram;
+  loading = true;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -17,5 +18,9 @@ export class CellprogramComponent implements OnInit {
 
   onclick(): void {
     this.router.navigate(['episodes'], {queryParams: {id: this.itemProgram.id}});
+  }
+
+  onLoad() {
+    this.loading = false;
   }
 }

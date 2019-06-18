@@ -1,5 +1,6 @@
-<div class="card" style="width: 50%;">
-  <img class="card-img-top img-responsive rounded" style="padding: auto" src={{itemProgram.image}} alt="...">
+<div class="card">
+  <div *ngIf="loading" class="loader" alt="loading"></div>
+  <img [hidden]="loading" (load)="onLoad()" class="card-img-top img-responsive rounded" style="padding: auto" src={{itemProgram.image}} alt="...">
   <div class="card-body">
     <h5 class="card-title text-center">{{itemProgram.name}}</h5>
     <p class="card-text text-center"><small class="text-muted">{{getFormat()}}</small></p>

@@ -9,12 +9,16 @@ import {formatDate} from '@angular/common';
 })
 export class CellepisodesComponent implements OnInit {
   @Input() itemProgram: RadioEpisodes;
-
+  loading = true;
   constructor() {}
 
   ngOnInit() {}
 
   getFormat(): string {
     return formatDate(this.itemProgram.date.toDate(), 'dd MMMM yyyy HH:mm', 'en');
+  }
+
+  onLoad() {
+    this.loading = false;
   }
 }

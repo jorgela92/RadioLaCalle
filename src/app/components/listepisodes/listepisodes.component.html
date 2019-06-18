@@ -1,10 +1,11 @@
 <div class="container">
   <br>
   <a class="btn btn-primary" (click)="clickBack()">Volver</a>
-  <br>
+  <br><br>
 </div>
 <div class="container">
-  <img class="rounded img-responsive" style="padding: auto" src={{itemProgram?.imageProgram}} alt="...">
+  <div *ngIf="loading" class="loader" alt="loading"></div>
+  <img [hidden]="loading" (load)="onLoad()" class="rounded img-responsive" style="padding: auto; width: 100%" src={{itemProgram?.imageProgram}} alt="...">
   <h4 class="text-center">{{itemProgram?.titleProgram}}</h4>
   <p class="text-center">{{itemProgram?.subtitleProgram}}</p>
   <br>

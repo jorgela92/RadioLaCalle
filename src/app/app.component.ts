@@ -18,7 +18,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
-    trigger('myAnimation', [
+    trigger('animation', [
       transition('* => *', [
         query(
           ':enter',

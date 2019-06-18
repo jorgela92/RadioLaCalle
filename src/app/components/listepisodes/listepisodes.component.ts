@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class ListepisodesComponent implements OnInit, OnDestroy {
   private itemProgram: RadioProgram;
   private sub: any;
+  loading = true;
   constructor(private router: Router, private route: ActivatedRoute, public dataService: DatabaseService) {}
 
   ngOnInit() {
@@ -39,5 +40,9 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
 
   clickBack(): void {
     this.router.navigate(['programs']);
+  }
+
+  onLoad() {
+    this.loading = false;
   }
 }

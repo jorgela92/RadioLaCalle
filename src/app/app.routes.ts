@@ -4,9 +4,9 @@ import {ListprogramComponent} from './components/listprogram/listprogram.compone
 import {ListepisodesComponent} from './components/listepisodes/listepisodes.component';
 
 const APP_ROUTES: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'programs', component: ListprogramComponent},
-  {path: 'episodes', component: ListepisodesComponent},
+  {path: 'home', component: HomeComponent, data: {animation: 'Home'}},
+  {path: 'programs', component: ListprogramComponent, data: {animation: 'Programs'}},
+  {path: 'episodes', component: ListepisodesComponent, data: {animation: 'Episodes'}},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
 ];
 

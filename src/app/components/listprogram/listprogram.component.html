@@ -1,12 +1,14 @@
-<div class="container">
-  <br>
-  <a class="btn btn-primary" (click)="clickBack()">Volver</a>
-  <br>
-</div>
-<div class="container">
-  <ul class="list-group row">
-    <li class="list-unstated card-columns d-flex flex-row flex-w" style="margin: auto"  *ngFor="let program of listItems">
-        <app-cellprogram [itemProgram]=program></app-cellprogram>
-    </li>
-  </ul>
+<div class = "box box2">
+  <div class="container">
+    <br>
+    <a class="btn btn-primary" (click)="clickBack()">Volver</a>
+    <br>
+  </div>
+  <div class="container">
+    <ul class="list-group row">
+      <li class="list-unstated card-columns d-flex flex-row flex-w" style="margin: auto"  *ngFor="let program of listItems">
+        <app-cellprogram [itemProgram]=program ></app-cellprogram>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -2,9 +2,9 @@
   <div *ngIf="loading" class="loader" alt="loading"></div>
   <img [hidden]="loading" (load)="onLoad()" class="card-img-top img-responsive rounded" style="padding: auto" src={{itemProgram.image}} alt="...">
   <div class="card-body">
-    <h5 class="card-title text-center">{{itemProgram.name}}</h5>
-    <p class="card-text text-center"><small class="text-muted">{{getFormat()}}</small></p>
-    <p class="card-text text-center">{{itemProgram.detail}}</p>
+    <h5 class="card-title text-center" style="font-size: 2vw;">{{itemProgram.name}}</h5>
+    <p class="card-text text-center" style="font-size: 1vw;"><small class="text-muted">{{getFormat()}}</small></p>
+    <p class="card-text text-center" style="font-size: 1vw;">{{itemProgram.detail}}</p>
   </div>
   <div class="card-footer">
     <!-- REPRODUCTOR -->

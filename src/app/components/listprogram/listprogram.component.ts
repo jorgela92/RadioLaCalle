@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RadioProgram, RadioEpisodes} from '../../app.component';
+import {RadioProgram} from '../../app.component';
 import {DatabaseService} from '../../services/database.service';
 import {Router} from '@angular/router';
 

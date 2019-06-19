@@ -17,7 +17,9 @@ export class CellprogramComponent implements OnInit {
   }
 
   onclick(): void {
-    this.router.navigate(['episodes'], {queryParams: {id: this.itemProgram.id}});
+    if (this.itemProgram.programs.length > 0) {
+      this.router.navigate(['episodes'], {queryParams: {id: this.itemProgram.id}});
+    }
   }
 
   onLoad() {

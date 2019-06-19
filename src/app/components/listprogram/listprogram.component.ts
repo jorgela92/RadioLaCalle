@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RadioProgram} from '../../app.component';
+import {RadioEpisodes, RadioProgram} from '../../app.component';
 import {DatabaseService} from '../../services/database.service';
 import {Router} from '@angular/router';
 import {trigger, state, style, animate, transition, query, stagger} from '@angular/animations';
@@ -38,6 +38,13 @@ export class ListprogramComponent implements OnInit {
           programObject.titleProgram = resultP.get('name') as string;
           programObject.subtitleProgram = resultP.get('detail') as string;
           programObject.imageProgram = resultP.get('image') as string;
+          if (resultP.get('programs') != null) {
+            for (const pro of resultP.get('programs')) {
+              programObject.programs.push(pro.valueOf() as RadioEpisodes);
+            }
+          } else {
+            programObject.programs = [];
+          }
           this.listItems.push(programObject);
           });
       }

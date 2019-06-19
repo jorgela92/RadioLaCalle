@@ -27,5 +27,6 @@ export class RadioEpisodes {
   detail = '';
   image = '';
   name = '';
+  mixcloud = '';
   date: Timestamp;
 }

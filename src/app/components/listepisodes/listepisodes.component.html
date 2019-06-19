@@ -1,21 +1,24 @@
 <div class = "box box3">
-  <div class="container">
+  <div class="container-fluid">
     <br>
-    <a class="btn btn-primary" (click)="clickBack()">Volver</a>
+    <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>
     <br><br>
   </div>
-  <div class="container">
+  <div class="container-fluid">
     <div *ngIf="loading" class="loader" alt="loading"></div>
-    <img [hidden]="loading" (load)="onLoad()" class="rounded img-responsive" style="padding: auto; width: 100%" src={{itemProgram?.imageProgram}} alt="...">
+    <img [hidden]="loading" (load)="onLoad()" class="rounded img-responsive img-fluid align-content-center" style="padding: auto; width: 100%; height: 400px;" src={{itemProgram?.imageProgram}} alt="...">
     <h4 class="text-center" style="font-size: 2vw;">{{itemProgram?.titleProgram}}</h4>
     <p class="text-center" style="font-size: 1vw;">{{itemProgram?.subtitleProgram}}</p>
     <br>
   </div>
-  <div class="container">
-    <ul class="list-group row">
-      <li class="list-unstated card-columns d-flex flex-row flex-w" style="margin: auto"  *ngFor="let episode of itemProgram?.programs">
+  <div class="container-fluid">
+    <div class="col-6-md" *ngFor="let episode of itemProgram?.programs; let i = index" [@listStagger]="itemProgram?.programs.length">
+      <div class="left-style col-md-6" *ngIf="i%2 == 0">
         <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
-      </li>
-    </ul>
+      </div>
+      <div class="right-style col-md-6" *ngIf="i%2 != 0">
+        <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
+      </div>
+    </div>
   </div>
 </div>

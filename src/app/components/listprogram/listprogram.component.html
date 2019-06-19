@@ -1,14 +1,17 @@
 <div class = "box box2">
-  <div class="container">
+  <div class="container-fluid">
     <br>
-    <a class="btn btn-primary" (click)="clickBack()">Volver</a>
-    <br>
+    <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>
+    <br><br>
   </div>
-  <div class="container">
-    <ul class="list-group row">
-      <li class="list-unstated card-columns d-flex flex-row flex-w" style="margin: auto"  *ngFor="let program of listItems">
+  <div class="container-fluid">
+    <div class="col-6-md" *ngFor="let program of listItems; let i = index" [@listStagger]="listItems.length">
+      <div class="left-style col-md-6" *ngIf="i%2 == 0">
         <app-cellprogram [itemProgram]=program ></app-cellprogram>
-      </li>
-    </ul>
+      </div>
+      <div class="right-style col-md-6" *ngIf="i%2 != 0">
+        <app-cellprogram [itemProgram]=program ></app-cellprogram>
+      </div>
+    </div>
   </div>
 </div>

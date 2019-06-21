@@ -24,7 +24,7 @@ import {trigger, state, style, animate, transition, query, stagger} from '@angul
         query(':leave', animate('50ms', style({ opacity: 0 })), {optional: true})
       ])
     ])
-  ]
+  ],
 })
 
 export class ListprogramComponent implements OnInit {

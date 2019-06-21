@@ -9,9 +9,9 @@ import {Router} from '@angular/router';
 })
 export class CellprogramComponent implements OnInit {
   @Input() itemProgram: RadioProgram;
-  loading = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -21,8 +21,5 @@ export class CellprogramComponent implements OnInit {
       this.router.navigate(['episodes'], {queryParams: {id: this.itemProgram.id}});
     }
   }
-
-  onLoad() {
-    this.loading = false;
-  }
 }
+

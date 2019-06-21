@@ -1,24 +1,16 @@
 <div class = "box box3">
-  <div class="container-fluid">
-    <br>
+  <div class="container" style="padding-bottom: 10px;">
     <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>
-    <br><br>
   </div>
-  <div class="container-fluid">
-    <div *ngIf="loading" class="loader" alt="loading"></div>
-    <img [hidden]="loading" (load)="onLoad()" class="rounded img-responsive img-fluid align-content-center" style="padding: auto; width: 100%; height: 400px;" src={{itemProgram?.imageProgram}} alt="...">
-    <h4 class="text-center" style="font-size: 2vw;">{{itemProgram?.titleProgram}}</h4>
+  <div class="container-fluid" style="margin: auto">
+    <img class="rounded img-responsive img-fluid align-content-center" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{itemProgram?.imageProgram}} alt="...">
+    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{itemProgram?.titleProgram}}</h4>
     <p class="text-center" style="font-size: 1vw;">{{itemProgram?.subtitleProgram}}</p>
     <br>
   </div>
-  <div class="container-fluid">
-    <div class="col-6-md" *ngFor="let episode of itemProgram?.programs; let i = index" [@listStagger]="itemProgram?.programs.length">
-      <div class="left-style col-md-6" *ngIf="i%2 == 0">
-        <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
-      </div>
-      <div class="right-style col-md-6" *ngIf="i%2 != 0">
-        <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
-      </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of itemProgram?.programs" [@listStagger]="itemProgram?.programs.length">
+      <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
     </div>
   </div>
 </div>

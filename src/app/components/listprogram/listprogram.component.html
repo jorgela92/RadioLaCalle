@@ -1,17 +1,10 @@
 <div class = "box box2">
-  <div class="container-fluid">
-    <br>
+  <div class="container" style="padding-bottom: 10px;">
     <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>
-    <br><br>
   </div>
-  <div class="container-fluid">
-    <div class="col-6-md" *ngFor="let program of listItems; let i = index" [@listStagger]="listItems.length">
-      <div class="left-style col-md-6" *ngIf="i%2 == 0">
-        <app-cellprogram [itemProgram]=program ></app-cellprogram>
-      </div>
-      <div class="right-style col-md-6" *ngIf="i%2 != 0">
-        <app-cellprogram [itemProgram]=program ></app-cellprogram>
-      </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of listItems" [@listStagger]="listItems.length">
+      <app-cellprogram [itemProgram]=program ></app-cellprogram>
     </div>
   </div>
 </div>

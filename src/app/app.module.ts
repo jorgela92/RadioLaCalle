@@ -14,6 +14,7 @@ import { CellepisodesComponent } from './components/cellepisodes/cellepisodes.co
 import {APP_ROUTING} from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {RouterModule} from '@angular/router';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     RouterModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpClientModule
   ],
   providers: [ DatabaseService ],
   bootstrap: [ AppComponent ]

@@ -3,6 +3,8 @@ import {RadioEpisodes, RadioProgram} from '../../app.component';
 import {DatabaseService} from '../../services/database.service';
 import {Router} from '@angular/router';
 import {trigger, state, style, animate, transition, query, stagger} from '@angular/animations';
+import {MixcloundService} from '../../services/mixclound.service';
+import {Playlists} from '../../model/playlists';
 
 @Component({
   selector: 'app-listprogram',
@@ -28,9 +30,11 @@ import {trigger, state, style, animate, transition, query, stagger} from '@angul
 })
 
 export class ListprogramComponent implements OnInit {
+  private playLists: Playlists;
   listItems: RadioProgram[] = [];
-  constructor(public dataService: DatabaseService, private router: Router) {
-    this.dataService.getPrograms().subscribe((result) => {
+  constructor(public dataService: MixcloundService, private router: Router) {}
+  /*constructor(public dataService: DatabaseService, private router: Router) {
+    this.dataService.getPlayListsPrograms().subscribe((result) => {
       for (const doc of result.docs) {
         this.dataService.getProgram(doc.id).subscribe((resultP) => {
           const programObject: RadioProgram = new RadioProgram();
@@ -49,9 +53,13 @@ export class ListprogramComponent implements OnInit {
           });
       }
     });
-  }
+  }*/
 
   ngOnInit() {
+    this.dataService.getPlayListsPrograms().subscribe( (result) => {
+      this.playLists = result as Playlists;
+      // console.log(result.data);
+    });
   }
 
   clickBack(): void {

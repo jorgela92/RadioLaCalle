@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {trigger, style, animate, transition, query, stagger} from '@angular/animations';
 import {MixcloundService} from '../../services/mixclound.service';
-import {DataEntity, Model} from '../../model/model';
+import {Model} from '../../model/model';
 
 @Component({
   selector: 'app-listprogram',

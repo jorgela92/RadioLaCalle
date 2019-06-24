@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataEntity} from '../../model/model';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-cellepisodes',
@@ -10,16 +11,14 @@ import {DataEntity} from '../../model/model';
 export class CellepisodesComponent implements OnInit {
   @Input() private itemProgram: DataEntity;
   url: string;
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.url = this.itemProgram.key;
   }
 
   getFormat(): string {
-    return this.itemProgram.created_time;
-    // return formatDate(this.itemProgram.created_time.toDate(), 'dd MMMM yyyy HH:mm', 'en');
+    return formatDate(new Date(this.itemProgram.created_time), 'dd MMMM yyyy HH:mm', 'en');
   }
 }
 

@@ -48,4 +48,8 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
   clickBack(): void {
     this.router.navigate(['programs']);
   }
+
+  public getName(): string {
+    return this.cloudcasts.name.replace('Cloudcasts in ', '');
+  }
 }

@@ -3,8 +3,8 @@
     <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of playLists.data" [@listStagger]="playLists.data.length">
-      <app-cellprogram [itemProgram]=program ></app-cellprogram>
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let list of playLists.data" [@listStagger]="playListsCount">
+      <app-cellprogram [listObject]=list></app-cellprogram>
     </div>
   </div>
 </div>

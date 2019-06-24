@@ -1,9 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {RadioEpisodes, RadioProgram} from '../../app.component';
-import {DatabaseService} from '../../services/database.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {slideInAnimation} from '../../route-animation';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
+import {MixcloundService} from '../../services/mixclound.service';
+import {Model} from '../../model/model';
 
 @Component({
   selector: 'app-listepisodes',
@@ -29,27 +28,15 @@ import {animate, query, stagger, style, transition, trigger} from '@angular/anim
 })
 
 export class ListepisodesComponent implements OnInit, OnDestroy {
-  private itemProgram: RadioProgram;
+  private cloudcasts: Model;
   private sub: any;
 
-  constructor(private router: Router, private route: ActivatedRoute, public dataService: DatabaseService) {
-  }
+  constructor(private route: ActivatedRoute, private mixclound: MixcloundService, private router: Router) {}
 
   ngOnInit() {
     this.sub = this.route.queryParams.subscribe(params => {
-      this.dataService.getProgram(params.id).subscribe((resultP) => {
-        const programObject: RadioProgram = new RadioProgram();
-        programObject.id = this.route.snapshot.params.id;
-        programObject.titleProgram = resultP.get('name') as string;
-        programObject.subtitleProgram = resultP.get('detail') as string;
-        programObject.imageProgram = resultP.get('image') as string;
-        for (const pro of resultP.get('programs')) {
-          programObject.programs.push(pro.valueOf() as RadioEpisodes);
-        }
-        programObject.programs.sort(function compare(val1, val2) {
-          return val2.date.toDate().getTime() - val1.date.toDate().getTime();
-        });
-        this.itemProgram = programObject;
+      this.mixclound.getCloudcastsPrograms(params.id).subscribe((result) => {
+        this.cloudcasts = result as Model;
       });
     });
   }

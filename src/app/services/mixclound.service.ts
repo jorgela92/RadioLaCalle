@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Playlists} from '../model/playlists';
+import {Model} from '../model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +11,10 @@ export class MixcloundService {
   constructor(private httpClient: HttpClient) {}
 
   public getPlayListsPrograms() {
-    return this.httpClient.get<Playlists>(this.apiURL);
+    return this.httpClient.get<Model>(this.apiURL);
   }
- // slug
+
   public getCloudcastsPrograms(id: string) {
-    return this.httpClient.get<Playlists>(`${this.apiURL}/${id}/`);
+    return this.httpClient.get<Model>(`${this.apiURL}/${id}/cloudcasts/`);
   }
 }

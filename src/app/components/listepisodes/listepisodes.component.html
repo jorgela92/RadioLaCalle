@@ -3,13 +3,13 @@
     <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>
   </div>
   <div class="container-fluid" style="margin: auto">
-    <img class="rounded img-responsive img-fluid align-content-center" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{itemProgram?.imageProgram}} alt="...">
-    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{itemProgram?.titleProgram}}</h4>
-    <p class="text-center" style="font-size: 1vw;">{{itemProgram?.subtitleProgram}}</p>
+    <img class="rounded img-responsive img-fluid align-content-center" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{key}} alt="...">
+    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{cloudcasts.name}}</h4>
+    <p class="text-center" style="font-size: 1vw;">{{cloudcasts.name}}</p>
     <br>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of itemProgram?.programs" [@listStagger]="itemProgram?.programs.length">
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts.data" [@listStagger]="cloudcasts.data.length">
       <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
     </div>
   </div>

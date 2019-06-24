@@ -1,7 +1,12 @@
-<div class="card shadow p-0 mb-5 bg-white rounded" (click)="onclick()" data-toggle="tooltip" title="{{itemProgram.name}}">
-  <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{itemProgram.pictures.medium}} alt="...">
+<div class="card shadow p-0 mb-5 bg-white rounded" (click)="onclick()" data-toggle="tooltip" title="{{listObject.name}}">
+  <!--<picture>
+    <source media="(min-width: 800px)" srcset="listObject.owner.pictures.large, listObject.owner.pictures.large 2x">
+    <source media="(min-width: 450px)" srcset="listObject.owner.pictures.small, listObject.owner.pictures.small 2x">
+    <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{listObject.owner.pictures.extra_large}} srcset="listObject.owner.pictures.extra_large x2" alt="...">
+  </picture>-->
+  <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{listObject.owner.pictures.extra_large}} alt="...">
   <div class="card-body">
-    <h5 class="card-title text-center" style="font-size: 2vw;">{{itemProgram.name}}</h5>
+    <h5 class="card-title text-center" style="font-size: 2vw;">{{listObject.name}}</h5>
     <!--<p class="card-text pv-archiveText" style="font-size: 1vw;">{{itemProgram.subtitleProgram}}</p>-->
   </div>
 </div>

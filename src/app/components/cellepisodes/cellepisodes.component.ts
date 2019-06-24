@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RadioEpisodes} from '../../app.component';
-import {formatDate} from '@angular/common';
+import {DataEntity} from '../../model/model';
 
 @Component({
   selector: 'app-cellepisodes',
@@ -9,17 +8,18 @@ import {formatDate} from '@angular/common';
 })
 
 export class CellepisodesComponent implements OnInit {
-  @Input() itemProgram: RadioEpisodes;
+  @Input() private itemProgram: DataEntity;
   url: string;
   constructor() {
   }
 
   ngOnInit(): void {
-    this.url = this.itemProgram.mixcloud;
+    this.url = this.itemProgram.key;
   }
 
   getFormat(): string {
-    return formatDate(this.itemProgram.date.toDate(), 'dd MMMM yyyy HH:mm', 'en');
+    return this.itemProgram.created_time;
+    // return formatDate(this.itemProgram.created_time.toDate(), 'dd MMMM yyyy HH:mm', 'en');
   }
 }
 

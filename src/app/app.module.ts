@@ -5,15 +5,13 @@ import { AppComponent } from './app.component';
 import { ListprogramComponent } from './components/listprogram/listprogram.component';
 import { CellprogramComponent } from './components/cellprogram/cellprogram.component';
 import {FormsModule} from '@angular/forms';
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../environments/environment';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { ListepisodesComponent } from './components/listepisodes/listepisodes.component';
 import { CellepisodesComponent } from './components/cellepisodes/cellepisodes.component';
 import {APP_ROUTING} from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {MixcloundService} from './services/mixclound.service';
 
 
 @NgModule({
@@ -33,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     APP_ROUTING,
     HttpClientModule
   ],
-  providers: [ DatabaseService ],
+  providers: [ MixcloundService ],
   bootstrap: [ AppComponent ]
 })
 

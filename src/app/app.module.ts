@@ -8,7 +8,6 @@ import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {DatabaseService} from './services/database.service';
 import { ListepisodesComponent } from './components/listepisodes/listepisodes.component';
 import { CellepisodesComponent } from './components/cellepisodes/cellepisodes.component';
 import {APP_ROUTING} from './app.routes';
@@ -30,8 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
     RouterModule,
     APP_ROUTING,
     HttpClientModule

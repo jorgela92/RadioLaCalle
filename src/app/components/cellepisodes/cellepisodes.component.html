@@ -12,8 +12,6 @@
     <!--<p class="card-text pv-archiveText" style="font-size: 1vw; padding: auto;">{{itemProgram.detail}}</p>-->
   </div>
   <div class="card-footer" style="padding: auto">
-    <div [attr.data-mixcloud-play-button]=url>
-      <img class="img-fluid" style="display: block; margin: auto;" src="assets/img/play.png" alt="...">
-    </div>
+    <iframe width="100%" height="60" [attr.src]="getUrl()| safe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen  ></iframe>
   </div>
 </div>

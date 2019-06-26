@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {MixcloundService} from './services/mixclound.service';
+import {SafePipe} from './components/cellepisodes/SafePipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MixcloundService} from './services/mixclound.service';
     CellprogramComponent,
     ListepisodesComponent,
     CellepisodesComponent,
-    HomeComponent
+    HomeComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

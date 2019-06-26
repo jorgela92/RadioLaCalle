@@ -12,6 +12,6 @@
     <!--<p class="card-text pv-archiveText" style="font-size: 1vw; padding: auto;">{{itemProgram.detail}}</p>-->
   </div>
   <div class="card-footer" style="padding: auto">
-    <iframe width="100%" height="60" [attr.src]="getUrl()| safe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen  ></iframe>
+    <iframe width="100%" height="60" [attr.src]="getUrl()| safe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen [attr.id]="getUrl()"></iframe>
   </div>
 </div>

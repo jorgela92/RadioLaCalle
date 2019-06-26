@@ -37,6 +37,13 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
     this.sub = this.route.queryParams.subscribe(params => {
       this.mixclound.getCloudcastsPrograms(params.id).subscribe((result) => {
         this.cloudcasts = result as Model;
+        if (this.cloudcasts != null) {
+          if (this.cloudcasts.data.length > 0 ) {
+          this.cloudcasts.data.sort(function compare(val1, val2) {
+              return new Date(val2.created_time).getTime() - new Date(val1.created_time).getTime();
+            });
+          }
+        }
       });
     });
   }

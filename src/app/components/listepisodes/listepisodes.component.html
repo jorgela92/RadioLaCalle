@@ -1,22 +1,22 @@
-<div class = "box box3">
-  <div class="container" style="padding-bottom: 10px;">
-    <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>
-  </div>
-  <div class="container-fluid" style="margin: auto">
-    <picture>
-      <source media="(min-width: 1400px)" srcset="extra_large">
-      <source media="(min-width: 700px)" srcset="large">
-      <source media="(min-width: 500px)" srcset="large">
-      <source media="(min-width: 300px)" srcset="large">
-      <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src="i1024wx1024h" alt="...">
-    </picture>
-    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{getName()}}</h4>
-    <!--<p class="text-center" style="font-size: 1vw;">{{cloudcasts.name}}</p>-->
-    <br>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts.data" [@listStagger]="cloudcasts.data.length">
-      <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
+<div class="box box3">
+    <div class="container" style="padding-bottom: 10px;">
+        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>
     </div>
-  </div>
+    <div class="container-fluid" style="margin: auto">
+        <picture>
+            <source media="(min-width: 1400px)" srcset="extra_large">
+            <source media="(min-width: 700px)" srcset="large">
+            <source media="(min-width: 500px)" srcset="large">
+            <source media="(min-width: 300px)" srcset="large">
+            <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src="i1024wx1024h" alt="...">
+        </picture>
+        <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{getName()}}</h4>
+        <!--<p class="text-center" style="font-size: 1vw;">{{cloudcasts.name}}</p>-->
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts?.data" [@listStagger]="cloudcasts.data.length">
+            <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
+        </div>
+    </div>
 </div>

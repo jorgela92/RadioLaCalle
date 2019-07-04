@@ -28,8 +28,9 @@ import {Model} from '../../model/model';
 })
 
 export class ListepisodesComponent implements OnInit, OnDestroy {
-  private cloudcasts: Model;
-  private sub: any;
+  cloudcasts: Model;
+  sub: any;
+  name = '';
 
   constructor(private route: ActivatedRoute, private mixclound: MixcloundService, private router: Router) {}
 
@@ -46,6 +47,7 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
         }
       });
     });
+    this.name = this.cloudcasts.name.replace('Cloudcasts in ', '');
   }
 
   ngOnDestroy() {
@@ -54,9 +56,5 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
 
   clickBack(): void {
     this.router.navigate(['programs']);
-  }
-
-  public getName(): string {
-    return this.cloudcasts.name.replace('Cloudcasts in ', '');
   }
 }

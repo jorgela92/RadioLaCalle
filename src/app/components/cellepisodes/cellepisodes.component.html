@@ -1,14 +1,14 @@
 <div class="card shadow p-0 mb-5 bg-white rounded">
   <p class="card-header text-right" style="font-size: 1vw; padding: auto"><small class="text-muted">{{getFormat()}}</small></p>
   <picture>
-    <source media="(min-width: 1400px)" srcset="{{itemProgram.pictures.extra_large}}">
-    <source media="(min-width: 700px)" srcset="{{itemProgram.pictures.large}}">
-    <source media="(min-width: 450px)" srcset="{{itemProgram.pictures.large}}">
-    <source media="(min-width: 300px)" srcset="{{itemProgram.pictures.large}}">
+    <source media="(min-width: 1400px)" srcset="{{itemProgram?.pictures.extra_large}}">
+    <source media="(min-width: 700px)" srcset="{{itemProgram?.pictures.large}}">
+    <source media="(min-width: 450px)" srcset="{{itemProgram?.pictures.large}}">
+    <source media="(min-width: 300px)" srcset="{{itemProgram?.pictures.large}}">
     <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src={{itemProgram.pictures.i1024wx1024h}}  alt="...">
   </picture>
   <div class="card-body" style="padding: auto;">
-    <h5 class="card-title text-center" style="font-size: 2vw; padding: auto;">{{itemProgram.name}}</h5>
+    <h5 class="card-title text-center" style="font-size: 2vw; padding: auto;">{{itemProgram?.name}}</h5>
     <!--<p class="card-text pv-archiveText" style="font-size: 1vw; padding: auto;">{{itemProgram.detail}}</p>-->
   </div>
   <div class="card-footer" style="padding: auto">

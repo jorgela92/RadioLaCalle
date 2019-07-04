@@ -10,8 +10,8 @@ import {Model, DataEntity} from '../../model/model';
 })
 
 export class CellprogramComponent implements OnInit {
-  @Input() private listObject: DataEntity;
-  private cloudcasts: Model;
+  @Input() listObject: DataEntity;
+  cloudcasts: Model;
 
   constructor(private mixclound: MixcloundService, private router: Router) {}
 

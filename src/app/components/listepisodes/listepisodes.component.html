@@ -10,12 +10,12 @@
       <source media="(min-width: 300px)" srcset="large">
       <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src="i1024wx1024h" alt="...">
     </picture>
-    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{getName()}}</h4>
+    <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{name}}</h4>
     <!--<p class="text-center" style="font-size: 1vw;">{{cloudcasts.name}}</p>-->
     <br>
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts.data" [@listStagger]="cloudcasts.data.length">
+  <div class="row" *ngIf="cloudcasts">
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts?.data" [@listStagger]="cloudcasts?.data?.length">
       <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
     </div>
   </div>

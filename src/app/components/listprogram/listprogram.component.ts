@@ -28,8 +28,8 @@ import {Model} from '../../model/model';
 })
 
 export class ListprogramComponent implements OnInit {
-  private playLists: Model;
-  private playListsCount = 0;
+  playLists: Model;
+  playListsCount = 0;
   constructor(private dataService: MixcloundService, private router: Router) {}
 
   ngOnInit() {

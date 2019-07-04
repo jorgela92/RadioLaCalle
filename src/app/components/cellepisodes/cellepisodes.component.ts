@@ -9,7 +9,7 @@ import {formatDate} from '@angular/common';
 })
 
 export class CellepisodesComponent implements OnInit {
-  @Input() private itemProgram: DataEntity;
+  @Input() itemProgram: DataEntity;
   url: string;
   constructor() {}
 

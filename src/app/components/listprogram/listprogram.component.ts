@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {trigger, style, animate, transition, query, stagger} from '@angular/animations';
 import {MixcloundService} from '../../services/mixclound.service';
 import {Model} from '../../model/model';
+import {Subscription, of} from 'rxjs';
 
 @Component({
   selector: 'app-listprogram',
@@ -27,16 +28,23 @@ import {Model} from '../../model/model';
   ],
 })
 
-export class ListprogramComponent implements OnInit {
+export class ListprogramComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   playLists: Model;
   playListsCount = 0;
   constructor(private dataService: MixcloundService, private router: Router) {}
 
   ngOnInit() {
-    this.dataService.getPlayListsPrograms().subscribe( (result) => {
-      this.playLists = result;
-      this.playListsCount = result.data.length;
+    this.subscription = this.dataService.getPlayListsPrograms().subscribe( (result) => {
+      of(result).subscribe( data => {
+        this.playLists = data;
+        this.playListsCount = data.data.length;
+      });
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   clickBack(): void {

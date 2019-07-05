@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
 import {MixcloundService} from '../../services/mixclound.service';
 import {Model} from '../../model/model';
+import {Subscription, of} from 'rxjs';
 
 @Component({
   selector: 'app-listepisodes',
@@ -28,30 +29,34 @@ import {Model} from '../../model/model';
 })
 
 export class ListepisodesComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   cloudcasts: Model;
-  sub: any;
   name = '';
 
   constructor(private route: ActivatedRoute, private mixclound: MixcloundService, private router: Router) {}
 
   ngOnInit() {
-    this.sub = this.route.queryParams.subscribe(params => {
-      this.mixclound.getCloudcastsPrograms(params.id).subscribe((result) => {
-        this.cloudcasts = result as Model;
-        if (this.cloudcasts != null) {
-          if (this.cloudcasts.data.length > 0 ) {
-          this.cloudcasts.data.sort(function compare(val1, val2) {
-              return new Date(val2.created_time).getTime() - new Date(val1.created_time).getTime();
-            });
-          }
-        }
+    this.subscription = this.route.queryParams.subscribe(params => {
+      of(params).subscribe(data => {
+        this.subscription = this.mixclound.getCloudcastsPrograms(data.id).subscribe((result) => {
+          of(result).subscribe(dataEpisode => {
+            this.cloudcasts = dataEpisode;
+            if (this.cloudcasts != null) {
+              if (this.cloudcasts.data.length > 0 ) {
+                this.cloudcasts.data.sort(function compare(val1, val2) {
+                  return new Date(val2.created_time).getTime() - new Date(val1.created_time).getTime();
+                });
+              }
+            }
+          });
+        });
+        this.name = data.name.replace('Cloudcasts in ', '');
       });
     });
-    this.name = this.cloudcasts.name.replace('Cloudcasts in ', '');
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   clickBack(): void {

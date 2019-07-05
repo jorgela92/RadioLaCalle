@@ -1,10 +1,10 @@
 <div class="card shadow p-0 mb-5 bg-white rounded" (click)="onclick()" data-toggle="tooltip" title="{{listObject.name}}">
   <picture>
-    <source media="(min-width: 1400px)" srcset="extra_large">
-    <source media="(min-width: 700px)" srcset="large">
-    <source media="(min-width: 500px)" srcset="large">
-    <source media="(min-width: 300px)" srcset="large">
-    <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" src="i1024wx1024h" alt="...">
+    <source media="(min-width: 1400px)" data-srcset="extra_large" srcset="">
+    <source media="(min-width: 700px)" data-srcset="large" srcset="">
+    <source media="(min-width: 500px)" data-srcset="large" srcset="">
+    <source media="(min-width: 300px)" data-srcset="large" srcset="">
+    <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" data-src="i1024wx1024h" alt="...">
   </picture>
   <div class="card-body">
     <h5 class="card-title text-center" style="font-size: 2vw;">{{listObject.name}}</h5>

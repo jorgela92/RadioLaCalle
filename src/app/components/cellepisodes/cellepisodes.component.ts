@@ -9,21 +9,21 @@ import {formatDate} from '@angular/common';
 })
 
 export class CellepisodesComponent implements OnInit {
-  @Input() itemProgram: DataEntity;
-  url: string;
+  // tslint:disable-next-line:no-input-rename
+  @Input() itemEpisode: DataEntity;
+  private urlWidget = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2F';
   constructor() {}
 
-  ngOnInit(): void {
-    this.url = this.itemProgram.key;
-  }
+  ngOnInit(): void {}
 
   getUrl(): string {
-    // tslint:disable-next-line:max-line-length
-    return 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2F' + this.itemProgram.user.username + '%2F' + this.itemProgram.slug.replace('ñ', '%C3%B1') + '%2F';
+    let slug = '';
+    if (this.itemEpisode != null) { slug = this.itemEpisode.slug.replace('ñ', '%C3%B1'); }
+    return this.urlWidget + this.itemEpisode.user.username + '%2F' + slug + '%2F';
   }
 
   getFormat(): string {
-    return formatDate(new Date(this.itemProgram.created_time), 'dd MMMM yyyy HH:mm', 'en');
+    return formatDate(new Date(this.itemEpisode.created_time), 'dd MMMM yyyy HH:mm', 'en');
   }
 }
 

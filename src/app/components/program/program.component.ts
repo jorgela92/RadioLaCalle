@@ -6,9 +6,9 @@ import {Model} from '../../model/model';
 import {Subscription, of} from 'rxjs';
 
 @Component({
-  selector: 'app-listprogram',
-  templateUrl: './listprogram.component.html',
-  styleUrls: ['./listprogram.component.css'],
+  selector: 'app-program',
+  templateUrl: './program.component.html',
+  styleUrls: ['./program.component.css'],
   animations: [
     trigger('listStagger', [
       transition('* <=> *', [
@@ -28,7 +28,7 @@ import {Subscription, of} from 'rxjs';
   ],
 })
 
-export class ListprogramComponent implements OnInit, OnDestroy {
+export class ProgramComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   playLists: Model;
   playListsCount = 0;
@@ -43,11 +43,11 @@ export class ListprogramComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  clickBack(): void {
+  clickBack() {
     this.router.navigate(['home']);
   }
 }

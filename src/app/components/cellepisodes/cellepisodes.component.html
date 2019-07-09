@@ -1,15 +1,15 @@
 <div class="card shadow p-0 mb-5 bg-white rounded">
   <p class="card-header text-right" style="font-size: 1vw; padding: auto"><small class="text-muted">{{getFormat()}}</small></p>
   <picture>
-    <source media="(min-width: 1400px)" data-srcset="{{itemProgram?.pictures.extra_large}}" srcset="">
-    <source media="(min-width: 700px)" data-srcset="{{itemProgram?.pictures.large}}" srcset="">
-    <source media="(min-width: 450px)" data-srcset="{{itemProgram?.pictures.large}}" srcset="">
-    <source media="(min-width: 300px)" data-srcset="{{itemProgram?.pictures.large}}" srcset="">
+    <source media="(min-width: 1400px)" data-srcset="{{itemEpisode?.pictures?.extra_large}}" srcset="">
+    <source media="(min-width: 700px)" data-srcset="{{itemEpisode?.pictures?.large}}" srcset="">
+    <source media="(min-width: 450px)" data-srcset="{{itemEpisode?.pictures?.large}}" srcset="">
+    <source media="(min-width: 300px)" data-srcset="{{itemEpisode?.pictures?.large}}" srcset="">
     <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" data-src={{itemProgram.pictures.i1024wx1024h}}  alt="...">
   </picture>
   <div class="card-body" style="padding: auto;">
-    <h5 class="card-title text-center" style="font-size: 2vw; padding: auto;">{{itemProgram?.name}}</h5>
-    <!--<p class="card-text pv-archiveText" style="font-size: 1vw; padding: auto;">{{itemProgram.detail}}</p>-->
+    <h5 class="card-title text-center" style="font-size: 2vw; padding: auto;">{{itemEpisode?.name}}</h5>
+    <!--<p class="card-text pv-archiveText" style="font-size: 1vw; padding: auto;">{{itemEpisode.detail}}</p>-->
   </div>
   <div class="card-footer" style="padding: auto">
     <iframe width="100%" height="60" [attr.src]="getUrl()| safe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

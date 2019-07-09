@@ -6,9 +6,9 @@ import {Model} from '../../model/model';
 import {Subscription, of} from 'rxjs';
 
 @Component({
-  selector: 'app-listepisodes',
-  templateUrl: './listepisodes.component.html',
-  styleUrls: ['./listepisodes.component.css'],
+  selector: 'app-episodes',
+  templateUrl: './episodes.component.html',
+  styleUrls: ['./episodes.component.css'],
   animations: [
     trigger('listStagger', [
       transition('* <=> *', [
@@ -28,7 +28,7 @@ import {Subscription, of} from 'rxjs';
   ],
 })
 
-export class ListepisodesComponent implements OnInit, OnDestroy {
+export class EpisodesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   cloudcasts: Model;
   name = '';
@@ -50,7 +50,7 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
             }
           });
         });
-        this.name = data.name.replace('Cloudcasts in ', '');
+        this.name = (data as Model).name.replace('Cloudcasts in ', '');
       });
     });
   }
@@ -59,7 +59,7 @@ export class ListepisodesComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  clickBack(): void {
+  clickBack() {
     this.router.navigate(['programs']);
   }
 }

@@ -14,9 +14,9 @@
         <!--<p class="text-center" style="font-size: 1vw;">{{cloudcasts.name}}</p>-->
         <br>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="cloudcasts">
         <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of cloudcasts?.data" [@listStagger]="cloudcasts.data.length">
-            <app-cellepisodes [itemProgram]=episode></app-cellepisodes>
+            <app-cellepisodes [itemEpisode]=episode></app-cellepisodes>
         </div>
     </div>
 </div>

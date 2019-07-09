@@ -1,12 +1,2 @@
 /* You can add global styles to this file, and also import other style files */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
-.pv-archiveText {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: black;
-  overflow: hidden;
-}

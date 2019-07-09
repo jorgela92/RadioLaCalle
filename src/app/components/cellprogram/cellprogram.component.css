@@ -1,1 +1,6 @@
-
+.pv-archiveText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: black;
+  overflow: hidden;
+}

@@ -1,3 +1,6 @@
-.mixcloud-footer-widget-body-wrapper .my-fixed-element {
-  bottom: 60px;
+.pv-archiveText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: black;
+  overflow: hidden;
 }

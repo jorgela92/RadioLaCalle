@@ -30,7 +30,7 @@ import {Subscription, of} from 'rxjs';
 
 export class EpisodesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  cloudcasts: Model;
+  episodes: Model;
   name = '';
 
   constructor(private route: ActivatedRoute, private mixclound: MixcloundService, private router: Router) {}
@@ -40,10 +40,10 @@ export class EpisodesComponent implements OnInit, OnDestroy {
       of(params).subscribe(data => {
         this.subscription = this.mixclound.getCloudcastsPrograms(data.id).subscribe((result) => {
           of(result).subscribe(dataEpisode => {
-            this.cloudcasts = dataEpisode;
-            if (this.cloudcasts != null) {
-              if (this.cloudcasts.data.length > 0 ) {
-                this.cloudcasts.data.sort(function compare(val1, val2) {
+            this.episodes = dataEpisode;
+            if (this.episodes != null) {
+              if (this.episodes.data.length > 0 ) {
+                this.episodes.data.sort(function compare(val1, val2) {
                   return new Date(val2.created_time).getTime() - new Date(val1.created_time).getTime();
                 });
               }

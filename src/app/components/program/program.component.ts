@@ -30,15 +30,15 @@ import {Subscription, of} from 'rxjs';
 
 export class ProgramComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  playLists: Model;
-  playListsCount = 0;
+  programs: Model;
+  programsCount = 0;
   constructor(private dataService: MixcloundService, private router: Router) {}
 
   ngOnInit() {
     this.subscription = this.dataService.getPlayListsPrograms().subscribe( (result) => {
       of(result).subscribe( data => {
-        this.playLists = data;
-        this.playListsCount = data.data.length;
+        this.programs = data;
+        this.programsCount = data.data.length;
       });
     });
   }

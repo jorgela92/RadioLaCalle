@@ -9,7 +9,6 @@ import {formatDate} from '@angular/common';
 })
 
 export class CellepisodesComponent implements OnInit {
-  // tslint:disable-next-line:no-input-rename
   @Input() itemEpisode: DataEntity;
   private urlWidget = 'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&light=1&hide_artwork=1&feed=%2F';
   constructor() {}

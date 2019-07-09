@@ -12,13 +12,13 @@ import {Subscription, of} from 'rxjs';
 
 export class CellprogramComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  @Input() listObject: DataEntity;
+  @Input() itemProgram: DataEntity;
   cloudcasts: Model;
 
   constructor(private mixclound: MixcloundService, private router: Router) {}
 
   ngOnInit() {
-    this.subscription = this.mixclound.getCloudcastsPrograms(this.listObject.slug).subscribe((result) => {
+    this.subscription = this.mixclound.getCloudcastsPrograms(this.itemProgram.slug).subscribe((result) => {
      of(result).subscribe(data => {
        this.cloudcasts = data;
      });
@@ -31,7 +31,7 @@ export class CellprogramComponent implements OnInit, OnDestroy {
 
   onclick(): void {
     if (this.cloudcasts.data.length > 0) {
-      this.router.navigate(['episodes'], {queryParams: {id: this.listObject.slug}});
+      this.router.navigate(['episodes'], {queryParams: {id: this.itemProgram.slug}});
     }
   }
 }

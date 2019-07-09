@@ -2,9 +2,9 @@
     <div class="container" style="padding-bottom: 10px;">
         <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let list of playLists?.data" [@listStagger]="playListsCount">
-            <app-cellprogram [listObject]=list></app-cellprogram>
+    <div class="row" *ngIf="programs">
+        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of programs?.data" [@listStagger]="programsCount">
+            <app-cellprogram [itemProgram]="program"></app-cellprogram>
         </div>
     </div>
 </div>

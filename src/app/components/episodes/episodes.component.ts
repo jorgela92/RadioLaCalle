@@ -50,7 +50,7 @@ export class EpisodesComponent implements OnInit, OnDestroy {
             }
           });
         });
-        this.name = (data as Model).name.replace('Cloudcasts in ', '');
+        this.name = (data as Model).name;
       });
     });
   }

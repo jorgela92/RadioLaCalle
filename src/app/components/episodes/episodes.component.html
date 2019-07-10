@@ -4,12 +4,43 @@
     </div>
     <div class="container-fluid" style="margin: auto">
         <picture>
-            <source media="(min-width: 1400px)" data-srcset="extra_large" srcset="">
-            <source media="(min-width: 700px)" data-srcset="large" srcset="">
-            <source media="(min-width: 500px)" data-srcset="large" srcset="">
-            <source media="(min-width: 300px)" data-srcset="large" srcset="">
-            <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" data-src="i1024wx1024h" alt="...">
+            <source media="(min-width: 1400px)" data-srcset="extra_large" srcset="../../../assets/img/img-background.svg">
+            <source media="(min-width: 700px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">
+            <source media="(min-width: 500px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">
+            <source media="(min-width: 300px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">
+            <img class="lazy card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" data-src="i1024wx1024h" src="../../../assets/img/img-background.svg" alt="...">
         </picture>
+        <script async type="application/javascript">
+          document.addEventListener("DOMContentLoaded", function() {
+            let lazyloadImages = document.querySelectorAll("img.lazy");
+            let lazyloadThrottleTimeout;
+
+            function lazyload () {
+              if(lazyloadThrottleTimeout) {
+                clearTimeout(lazyloadThrottleTimeout);
+              }
+
+              lazyloadThrottleTimeout = setTimeout(function() {
+                let scrollTop = window.pageYOffset;
+                lazyloadImages.forEach(function(img) {
+                  if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                  }
+                });
+                if(lazyloadImages.length === 0) {
+                  document.removeEventListener("scroll", lazyload);
+                  window.removeEventListener("resize", lazyload);
+                  window.removeEventListener("orientationChange", lazyload);
+                }
+              }, 20);
+            }
+
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+          });
+        </script>
         <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{name}}</h4>
         <!--<p class="text-center" style="font-size: 1vw;">{{episodes.name}}</p>-->
         <br>

@@ -3,8 +3,13 @@ import {slideInAnimation} from './route-animation';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  template: '' +
+    '<div class="container-fluid">\n' +
+    '  <div class="container-fluid" [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData[\'animation\']">\n' +
+    '    <router-outlet #o="outlet"></router-outlet>\n' +
+    '  </div>\n' +
+    '</div>',
+  styles: [],
   animations: [ slideInAnimation ]
 })
 

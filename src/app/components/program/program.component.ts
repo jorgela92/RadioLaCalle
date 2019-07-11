@@ -7,8 +7,18 @@ import {Subscription, of} from 'rxjs';
 
 @Component({
   selector: 'app-program',
-  templateUrl: './program.component.html',
-  styleUrls: ['./program.component.css'],
+  template: '' +
+    '<div class="box box2">\n' +
+    '    <div class="container" style="padding-bottom: 10px;">\n' +
+    '        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>\n' +
+    '    </div>\n' +
+    '    <div class="row" *ngIf="programs">\n' +
+    '        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of programs?.data" [@listStagger]="programsCount">\n' +
+    '            <app-cellprogram [itemProgram]="program"></app-cellprogram>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div>',
+  styles: [],
   animations: [
     trigger('listStagger', [
       transition('* <=> *', [

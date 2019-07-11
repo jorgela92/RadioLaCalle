@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77867bf9-79cd-48dd-8d35-b2f446c8759f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/karma.conf.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/blocking-proxy" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/cssesc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/handlebars" beforeDir="false" />
@@ -11790,14 +11787,6 @@
       <change beforePath="$PROJECT_DIR$/node_modules/yeast/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/yeast/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/yeast/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/cellepisodes/cellepisodes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cellepisodes/cellepisodes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/cellprogram/cellprogram.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/cellprogram/cellprogram.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/episodes/episodes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/episodes/episodes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -11813,7 +11802,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="672">
               <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
             </state>
           </provider>
@@ -11822,7 +11811,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="252">
               <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -11835,7 +11824,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -12098,11 +12087,12 @@
       <workItem from="1562843070048" duration="672000" />
       <workItem from="1562844882321" duration="1838000" />
       <workItem from="1562846847956" duration="1387000" />
+      <workItem from="1562849089347" duration="90000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216759000" />
+    <option name="totallyTimeSpent" value="216849000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -12122,7 +12112,7 @@
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32982087" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.2655427" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2655427" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32982087" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -12403,16 +12393,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js" />
     <entry file="file://$PROJECT_DIR$/src/app/components/yall.min.js" />
     <entry file="file://$PROJECT_DIR$/src/app/components/program/program-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -12517,16 +12498,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="672">
           <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="252">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -12534,13 +12518,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tslint.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

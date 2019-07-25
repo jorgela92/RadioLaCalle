@@ -6,7 +6,7 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MixcloundService} from './services/mixclound.service';
 import {AppRoutingModule} from './app-routing.module';
-
+import {LazyViewport} from './components/lazy-viewport';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,10 @@ import {AppRoutingModule} from './app-routing.module';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ MixcloundService ],
+  providers: [
+    MixcloundService,
+    LazyViewport
+  ],
   bootstrap: [ AppComponent ]
 })
 

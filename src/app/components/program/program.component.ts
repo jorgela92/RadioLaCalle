@@ -3,20 +3,23 @@ import {Router} from '@angular/router';
 import {trigger, style, animate, transition, query, stagger} from '@angular/animations';
 import {MixcloundService} from '../../services/mixclound.service';
 import {Model} from '../../model/model';
-import {Subscription, of} from 'rxjs';
+import {Subscription, of, Observable} from 'rxjs';
 
 @Component({
   selector: 'app-program',
   template: '' +
-    '<div class="box box2">\n' +
-    '    <div class="container" style="padding-bottom: 10px;">\n' +
-    '        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>\n' +
-    '    </div>\n' +
-    '    <div class="row" *ngIf="programs">\n' +
-    '        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of programs?.data" [@listStagger]="programsCount">\n' +
-    '            <app-cellprogram [itemProgram]="program"></app-cellprogram>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
+    '<div class="box box2">' +
+    '    <div class="container" style="padding-bottom: 10px;">' +
+    '        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()" data-toggle="tooltip" title="Volver">Volver</button>' +
+    '    </div>' +
+    '    <div class="row" *ngIf="programsObs | async as programs; else loading">' +
+    '        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let program of programs.data" [@listStagger]="programs.data.length">' +
+    '            <app-cellprogram [itemProgram]="program"></app-cellprogram>' +
+    '        </div>' +
+    '    </div>' +
+    '    <ng-template #loading>' +
+    '        <div>Loading ...</div>' +
+    '    </ng-template>' +
     '</div>',
   styles: [],
   animations: [
@@ -38,23 +41,13 @@ import {Subscription, of} from 'rxjs';
   ],
 })
 
-export class ProgramComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
-  programs: Model;
-  programsCount = 0;
+export class ProgramComponent implements OnInit {
+  programsObs: Observable<Model>;
+
   constructor(private dataService: MixcloundService, private router: Router) {}
 
   ngOnInit() {
-    this.subscription = this.dataService.getPlayListsPrograms().subscribe( (result) => {
-      of(result).subscribe( data => {
-        this.programs = data;
-        this.programsCount = data.data.length;
-      });
-    });
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.programsObs = this.dataService.getPlayListsPrograms();
   }
 
   clickBack() {

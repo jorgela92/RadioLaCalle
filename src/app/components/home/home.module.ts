@@ -5,7 +5,10 @@ import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [HomeRoutingModule, CommonModule],
+  imports: [
+    HomeRoutingModule,
+    CommonModule
+  ],
   providers: []
 })
 

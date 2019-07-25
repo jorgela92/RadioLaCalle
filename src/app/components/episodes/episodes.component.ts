@@ -8,27 +8,30 @@ import {Subscription, of} from 'rxjs';
 @Component({
   selector: 'app-episodes',
   template: '' +
-    '<div class="box box3">\n' +
-    '    <div class="container" style="padding-bottom: 10px;">\n' +
-    '        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>\n' +
-    '    </div>\n' +
-    '    <div class="container-fluid" style="margin: auto">\n' +
-    '      <picture>\n' +
-    '        <source media="(min-width: 1400px)" data-srcset="extra_large" srcset="../../../assets/img/img-background.svg">\n' +
-    '        <source media="(min-width: 700px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">\n' +
-    '        <source media="(min-width: 500px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">\n' +
-    '        <source media="(min-width: 300px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">\n' +
-    '        <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" data-src="i1024wx1024h" src="../../../assets/img/img-background.svg" alt="...">\n' +
-    '      </picture>\n' +
-    '      <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{name}}</h4>\n' +
-    '        <!--<p class="text-center" style="font-size: 1vw;">{{episodes.name}}</p>-->\n' +
-    '      <br>\n' +
-    '    </div>\n' +
-    '    <div class="row" *ngIf="episodes">\n' +
-    '        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of episodes?.data" [@listStagger]="episodes.data.length">\n' +
-    '            <app-cellepisodes [itemEpisode]=episode></app-cellepisodes>\n' +
-    '        </div>\n' +
-    '    </div>\n' +
+    '<div class="box box3">' +
+    '    <div class="container" style="padding-bottom: 10px;">' +
+    '        <button class="btn btn-secondary shadow-sm p-1" style="font-size: 1vw;" (click)="clickBack()">Volver</button>' +
+    '    </div>' +
+    '    <div class="container-fluid" style="margin: auto">' +
+    '      <picture>' +
+    '        <source media="(min-width: 1400px)" data-srcset="extra_large" srcset="../../../assets/img/img-background.svg">' +
+    '        <source media="(min-width: 700px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">' +
+    '        <source media="(min-width: 500px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">' +
+    '        <source media="(min-width: 300px)" data-srcset="large" srcset="../../../assets/img/img-background.svg">' +
+    '        <img class="card-img-top img-responsive img-fluid" style="padding: auto; max-width:100%; width: 100%; height: auto;" [appLazySrc]="i1024wx1024h" src="../../../assets/img/img-background.svg" alt="...">' +
+    '      </picture>' +
+    '      <h4 class="text-center" style="font-size: 2vw; padding-top: auto;">{{name}}</h4>' +
+    '        <!--<p class="text-center" style="font-size: 1vw;">{{episodes.name}}</p>-->' +
+    '      <br>' +
+    '    </div>' +
+    '    <div class="row" *ngIf="episodes as listEpisodes; else loading" >' +
+    '        <div class="col-xs-12 col-sm-6 col-md-6" *ngFor="let episode of listEpisodes.data" [@listStagger]="listEpisodes.data.length">' +
+    '            <app-cellepisodes [itemEpisode]=episode></app-cellepisodes>' +
+    '        </div>' +
+    '    </div>' +
+    '   <ng-template #loading>' +
+    '      <div>Loading ...</div>' +
+    '   </ng-template>' +
     '</div>',
   styles: [],
   animations: [

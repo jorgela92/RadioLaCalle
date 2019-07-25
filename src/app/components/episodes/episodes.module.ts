@@ -4,12 +4,14 @@ import {EpisodesRoutingModule} from './episodes-routing.module';
 import {CellepisodesComponent} from '../cellepisodes/cellepisodes.component';
 import {CommonModule} from '@angular/common';
 import {SafePipe} from '../cellepisodes/SafePipe';
+import {LazySrcDirective} from '../lazy-src.directive';
 
 @NgModule({
   declarations: [
     EpisodesComponent,
     CellepisodesComponent,
-    SafePipe
+    SafePipe,
+    LazySrcDirective
   ],
   imports: [
     EpisodesRoutingModule,
